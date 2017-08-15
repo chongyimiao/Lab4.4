@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         queue = Volley.newRequestQueue(context);
 
         if (!pDialog.isShowing())
-            pDialog.setMessage("Syn with server...");
+            pDialog.setMessage("Syn with server... miao miao");
         pDialog.show();
 
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                             caList.clear();
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject courseResponse = (JSONObject) response.get(i);
-                                String code = courseResponse.getString("code");
+                                String code = courseResponse.getString("code");  //must be same name with the database
                                 String title = courseResponse.getString("title");
                                 String credit = courseResponse.getString("credit");
                                 Course course = new Course(code, title, credit);
